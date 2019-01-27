@@ -29,7 +29,7 @@ public class AudioManager : Singleton<AudioManager>
 
     private void Start()
     {
-        Play("SadTheme");
+        Play("Main");
         
         loadingEnd = true;
     }
@@ -45,12 +45,12 @@ public class AudioManager : Singleton<AudioManager>
         return null;
     }
 
-    private void Play(string soundName)
+    public void Play(string soundName)
     {
         FindSound(soundName)?.Source.Play();
     }
 
-    private void Stop(string soundName)
+    public void Stop(string soundName)
     {
         FindSound(soundName)?.Source.Stop();
     }
