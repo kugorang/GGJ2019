@@ -150,7 +150,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -70}
-  m_SizeDelta: {x: 510, y: 300}
+  m_SizeDelta: {x: 510, y: 767.7}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &12621432
 MonoBehaviour:
@@ -506,7 +506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &304839745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -797,10 +797,10 @@ RectTransform:
   m_Father: {fileID: 2065770109}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.25, y: -77}
-  m_SizeDelta: {x: 252.5, y: 154}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &473738938
 MonoBehaviour:
@@ -824,7 +824,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 88d5a9a53634873419f8e44933570d8a, type: 3}
-    m_FontSize: 12
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -835,7 +835,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Phil Jae Chun (TONEGRAY)
+  m_Text: 'Sound
+
+
+
+    Phil Jae Chun (TONEGRAY)
 
 
     Blog : tonegray.com'
@@ -891,10 +895,10 @@ RectTransform:
   m_Father: {fileID: 12621431}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 255, y: -73}
-  m_SizeDelta: {x: 510, y: 146}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &527484473
 MonoBehaviour:
@@ -1057,7 +1061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &581754695
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1489,6 +1493,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114773088469882466, guid: 3d79aa1a1cbfb0c43a203dc728bb1163,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1152005449}
     - target: {fileID: 4768645488722080, guid: 3d79aa1a1cbfb0c43a203dc728bb1163, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1533,11 +1542,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114773088469882466, guid: 3d79aa1a1cbfb0c43a203dc728bb1163,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1152005449}
     - target: {fileID: 223929224129976000, guid: 3d79aa1a1cbfb0c43a203dc728bb1163,
         type: 3}
       propertyPath: m_SortingOrder
@@ -1862,10 +1866,10 @@ RectTransform:
   m_Father: {fileID: 2065770109}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 381.25, y: -77}
-  m_SizeDelta: {x: 257.5, y: 154}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1422813810
 MonoBehaviour:
@@ -1889,7 +1893,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 88d5a9a53634873419f8e44933570d8a, type: 3}
-    m_FontSize: 12
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1900,7 +1904,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Kim Hyeonwoo (kugorang)
+  m_Text: 'Game Design, Programming, Art
+
+
+
+    Kim Hyeonwoo (kugorang)
 
 
     Twitter : @kugorang
@@ -2662,10 +2670,10 @@ RectTransform:
   m_Father: {fileID: 12621431}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 255, y: -223}
-  m_SizeDelta: {x: 510, y: 154}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2065770110
 MonoBehaviour:
@@ -2676,7 +2684,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2065770108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
