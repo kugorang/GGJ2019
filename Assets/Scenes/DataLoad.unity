@@ -158,13 +158,13 @@ MonoBehaviour:
   loadingEnd: 0
   sounds:
   - Name: Main
-    Clip: {fileID: 8300000, guid: 723079da8cb17f04abb1e38d76ef329d, type: 3}
+    Clip: {fileID: 8300000, guid: efbfa4be9e7add44f9c4559668dd1fa5, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 1
     Source: {fileID: 0}
   - Name: Sad
-    Clip: {fileID: 8300000, guid: 232f33de1666bfb4185d1c962e44d494, type: 3}
+    Clip: {fileID: 8300000, guid: ab219f227727de34cba85b9d5f21ba7f, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 1
