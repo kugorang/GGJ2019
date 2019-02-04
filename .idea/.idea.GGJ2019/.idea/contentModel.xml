@@ -11,11 +11,12 @@
           <e p="AudioManager.cs" t="Include" />
           <e p="GameManager" t="Include">
             <e p="Bedroom.cs" t="Include" />
-            <e p="Bedroom_real.cs" t="Include" />
+            <e p="BedroomReal.cs" t="Include" />
             <e p="DataLoad.cs" t="Include" />
             <e p="Gallery.cs" t="Include" />
             <e p="Livingroom.cs" t="Include" />
-            <e p="Livingroom_real.cs" t="Include" />
+            <e p="LivingroomReal.cs" t="Include" />
+            <e p="Logo.cs" t="Include" />
           </e>
           <e p="LevelChanger.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />

@@ -6,36 +6,42 @@ namespace GameManager
 {
     public class Livingroom : MonoBehaviour
     {
-        private bool sofaFlag, clockFlag, firstChange;
+        private bool _sofaFlag, _clockFlag, _firstChange;
         public Sprite[] sofaSpriteArr, clockSpriteArr;
         public Image sofaBtn, clockBtn;
 
-        private int nowIndex;
+        private int _nowIndex;
 
         public LevelChanger levelChanger;
 
         private void Start()
         {
+            PlayerPrefs.SetString("PreviousScene", "Livingroom");
+            
             InvokeRepeating(nameof(ButtonChanger), 0f, 1.0f);
         }
 
         // Update is called once per frame
         private void ButtonChanger()
         {
-            if (firstChange)
+            if (_firstChange)
             {
-                firstChange = false;
-                levelChanger.FadeToLevel("Livingroom_real");
+                _firstChange = false;
+                
+                AudioManager.onInstance.Stop("Main");
+                AudioManager.onInstance.Play("Sad");
+                
+                levelChanger.FadeToLevel("LivingroomReal");
             }
             else
             {
-                if (!sofaFlag)
-                    sofaBtn.sprite = sofaSpriteArr[nowIndex];
+                if (!_sofaFlag)
+                    sofaBtn.sprite = sofaSpriteArr[_nowIndex];
                 
-                if (!clockFlag)
-                    clockBtn.sprite = clockSpriteArr[nowIndex];
+                if (!_clockFlag)
+                    clockBtn.sprite = clockSpriteArr[_nowIndex];
 
-                nowIndex = nowIndex == 1 ? 0 : 1;    
+                _nowIndex = _nowIndex == 1 ? 0 : 1;    
             }
         }
 
@@ -44,17 +50,17 @@ namespace GameManager
             switch (btnName)
             {
                 case "onSofa":
-                    sofaFlag = true;
+                    _sofaFlag = true;
                     break;
                 case "onClock":
-                    clockFlag = true;
+                    _clockFlag = true;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
 
-            if (sofaFlag && clockFlag)
-                firstChange = true;
+            if (_sofaFlag && _clockFlag)
+                _firstChange = true;
         }
     }
 }

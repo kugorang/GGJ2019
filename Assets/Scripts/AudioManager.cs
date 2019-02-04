@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,12 +10,23 @@ public class AudioManager : Singleton<AudioManager>
 
     private List<AudioSource> _pauseSources;
     private bool _isMute;
+
+    private WaitForSeconds _fadeWait;
 		
     // Use this for initialization
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-			
+        
+        _pauseSources = new List<AudioSource>();
+        _fadeWait = new WaitForSeconds(0.01f);
+
+        if (sounds == null)
+        {
+            Debug.LogWarning("No sounds on AudioManager");
+            return;
+        }
+        
         foreach (var s in sounds)
         {
             s.Source = gameObject.AddComponent<AudioSource>();
@@ -23,8 +35,6 @@ public class AudioManager : Singleton<AudioManager>
             s.Source.pitch = s.Pitch;
             s.Source.loop = s.Loop;
         }
-
-        _pauseSources = new List<AudioSource>();
     }
 
     private void Start()
@@ -47,12 +57,44 @@ public class AudioManager : Singleton<AudioManager>
 
     public void Play(string soundName)
     {
-        FindSound(soundName)?.Source.Play();
+        var s = FindSound(soundName);
+
+        if (s == null) 
+            return;
+        
+        StartCoroutine(FadeIn(s.Source));
+    }
+
+    private IEnumerator FadeIn(AudioSource s)
+    {
+        s.Play();
+        
+        while (s.volume < 1f)
+        {
+            s.volume += 0.01f;
+            yield return _fadeWait;
+        }
     }
 
     public void Stop(string soundName)
     {
-        FindSound(soundName)?.Source.Stop();
+        var s = FindSound(soundName);
+
+        if (s == null)
+            return;
+
+        StartCoroutine(FadeOut(s.Source));
+    }
+    
+    private IEnumerator FadeOut(AudioSource s)
+    {
+        while (s.volume > 0f)
+        {
+            s.volume -= 0.02f;
+            yield return _fadeWait;
+        }
+        
+        s.Stop();
     }
 
     public bool IsPlay(string soundName)
@@ -71,6 +113,7 @@ public class AudioManager : Singleton<AudioManager>
             
             _pauseSources.Add(s.Source);
             s.Source.Pause();
+            
             _isMute = true;
         }
     }

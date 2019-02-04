@@ -6,36 +6,42 @@ namespace GameManager
 {
     public class Bedroom : MonoBehaviour
     {
-        private bool bedFlag, mirrorFlag, firstChange;
+        private bool _bedFlag, _mirrorFlag, _firstChange;
         public Sprite[] bedSpriteArr, mirrorSpriteArr;
         public Image bedBtn, mirrorBtn;
 
-        private int nowIndex;
+        private int _nowIndex;
 
         public LevelChanger levelChanger;
 
         private void Start()
         {
+            PlayerPrefs.SetString("PreviousScene", "Bedroom");
+            
             InvokeRepeating(nameof(ButtonChanger), 0f, 1.0f);
         }
 
         // Update is called once per frame
         private void ButtonChanger()
         {
-            if (firstChange)
+            if (_firstChange)
             {
-                firstChange = false;
-                levelChanger.FadeToLevel("Bedroom_real");
+                _firstChange = false;
+                
+                AudioManager.onInstance.Stop("Main");
+                AudioManager.onInstance.Play("Sad");
+                
+                levelChanger.FadeToLevel("BedroomReal");
             }
             else
             {
-                if (!bedFlag)
-                    bedBtn.sprite = bedSpriteArr[nowIndex];
+                if (!_bedFlag)
+                    bedBtn.sprite = bedSpriteArr[_nowIndex];
                 
-                if (!mirrorFlag)
-                    mirrorBtn.sprite = mirrorSpriteArr[nowIndex];
+                if (!_mirrorFlag)
+                    mirrorBtn.sprite = mirrorSpriteArr[_nowIndex];
 
-                nowIndex = nowIndex == 1 ? 0 : 1;    
+                _nowIndex = _nowIndex == 1 ? 0 : 1;    
             }
         }
 
@@ -44,17 +50,17 @@ namespace GameManager
             switch (btnName)
             {
                 case "onBed":
-                    bedFlag = true;
+                    _bedFlag = true;
                     break;
                 case "onMirror":
-                    mirrorFlag = true;
+                    _mirrorFlag = true;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
 
-            if (bedFlag && mirrorFlag)
-                firstChange = true;
+            if (_bedFlag && _mirrorFlag)
+                _firstChange = true;
         }
     }
 }

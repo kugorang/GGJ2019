@@ -159,15 +159,15 @@ MonoBehaviour:
   sounds:
   - Name: Main
     Clip: {fileID: 8300000, guid: efbfa4be9e7add44f9c4559668dd1fa5, type: 3}
-    Volume: 1
+    Volume: 0
     Pitch: 1
     Loop: 1
     Source: {fileID: 0}
   - Name: Sad
     Clip: {fileID: 8300000, guid: ab219f227727de34cba85b9d5f21ba7f, type: 3}
-    Volume: 1
+    Volume: 0
     Pitch: 1
-    Loop: 1
+    Loop: 0
     Source: {fileID: 0}
 --- !u!1 &512094882
 GameObject:

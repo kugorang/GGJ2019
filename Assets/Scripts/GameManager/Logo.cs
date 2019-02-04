@@ -2,14 +2,19 @@
 
 namespace GameManager
 {
-    public class Gallery : MonoBehaviour
+    public class Logo : MonoBehaviour
     {
+        public GameObject levelChanger;
+        
+        // Start is called before the first frame update
         private void Awake()
-        {
-            PlayerPrefs.SetString("PreviousScene", "Gallery");
+        {            
+            if (PlayerPrefs.GetString("PreviousScene") != "DataLoad")
+            {
+                levelChanger.SetActive(false);
+            }
         }
 
-        // Start is called before the first frame update
         private void Start()
         {
             if (AudioManager.onInstance.IsPlay("Sad"))

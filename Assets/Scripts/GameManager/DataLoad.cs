@@ -5,15 +5,17 @@ namespace GameManager
 {
     public class DataLoad : MonoBehaviour
     {
-        private bool nextSceneLoad;
+        private bool _nextSceneLoad;
         
         // Update is called once per frame
         private void Update()
         {
-            if (nextSceneLoad || !AudioManager.onInstance.loadingEnd || !AndroidBackBtnManager.onInstance.loadingEnd) 
+            if (_nextSceneLoad || !AudioManager.onInstance.loadingEnd || !AndroidBackBtnManager.onInstance.loadingEnd) 
                 return;
             
-            nextSceneLoad = true;
+            _nextSceneLoad = true;
+            PlayerPrefs.SetString("PreviousScene", "DataLoad");
+            
             SceneManager.LoadScene("Logo");
         }
     }
